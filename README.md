@@ -2,13 +2,13 @@
 
 Version 0.0.1
 
-A command-line ruby script to scrape an ArcGIS Server layer through the REST API
-and store the features locally in a CSV.
+A command-line ruby script to scrape an ArcGIS Server feature layer through 
+the REST API and store the features locally in a CSV.
 
 ###Methodology
 
 [ArcGIS Server](http://www.esri.com/software/arcgis/arcgisserver) does not 
-provide "bulk download" functionality, nor does the 
+provide "bulk download" functionality for feature layers, nor does the 
 [REST API](http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/) allow you to 
 query for more than 1,000 features at a time (at least under the default
 server configuration). However, under the default configuration, a query
@@ -29,9 +29,25 @@ all of the features are retrieved. The results are written to a CSV file.
 
 `$ ruby map-gather.rb REST_API_URL OUTPUT_FILE_NAME`
 
-Example:
+Or, more specifically:
 
 `$ ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv`
+
+Example:
+
+    $ ruby map-gather.rb http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/6/query test.csv
+    Getting list of OBJECTIDs...
+    Success!
+    Creating output file...
+    Getting and saving features...
+    ...at OID 100, 25.44529262086514% Done
+    ...at OID 200, 50.89058524173028% Done
+    ...at OID 300, 76.33587786259542% Done
+    Done!
+
+Output:
+
+![output sample](http://raw.github.com/caseypt/map-gather/results.png "Output Sample")
 
 ###TODO
 
