@@ -39,7 +39,7 @@ Or, more specifically:
 
 Example:
 
-    $ ruby map-gather.rb http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/6/query test.csv
+    $ ruby map-gather.rb http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/6/query output.csv
     Getting list of OBJECTIDs...
     Success!
     Creating output file...
