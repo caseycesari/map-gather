@@ -2,28 +2,32 @@
 
 Version 0.0.1
 
-A command-line ruby script to scrape an ArcGIS Server feature layer through 
-the REST API and store the features locally in a CSV.
+A command-line ruby script to scrape the tablular data of an ArcGIS Server 
+feature layer through the REST API and store the results locally in a CSV.
 
 ###Methodology
 
-[ArcGIS Server](http://www.esri.com/software/arcgis/arcgisserver) does not 
-provide "bulk download" functionality for feature layers, nor does the 
+There is no easy way for a user to get all of the tabular data for a large 
+(> 1,000 features) 
+[ArcGIS Server](http://www.esri.com/software/arcgis/arcgisserver) feature layer.
+ArcGIS Server does not provide "bulk download" functionality, nor does the 
 [REST API](http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/) allow you to 
 query for more than 1,000 features at a time (at least under the default
-server configuration). However, under the default configuration, a query
-to return just the ObjectIDs for all of the features in a layer has no limit. 
-Therefore, to scrape all of the features for a given layer, *map-gather* first
-queries for the ObjectIDs of all of the features in the provided layer. 
-Then, in batches of 100, `WHERE OBJECTD ID IN (1, 2, 3..)` queries are
-made (~2 seconds a part, as to not overwhelm the server) until 
-all of the features are retrieved. The results are written to a CSV file.
+server configuration). However, by default, there is no limit on the number 
+of results of a query that returns only the `ObjectIDs` for all of the 
+features in a layer. 
+Therefore, to scrape the tabular data of a feature layer, 
+*map-gather* first queries for the `ObjectIDs` of all of the 
+features in the provided layer. Then, in batches of 100, 
+`WHERE OBJECTD ID IN (1, 2, 3,...)` queries are made (~2 seconds apart, 
+as to not overwhelm the server) until all of the features are retrieved. 
+The results are written locally to a CSV file.
 
 ###Dependencies
 
 - Ruby
 - [rest-client](https://github.com/archiloque/rest-client)
-- An open ArcGIS Server REST API endpoint to query
+- An open (i.e. no auth token/password needed) ArcGIS Server REST API endpoint to query
 
 ###Usage
 
