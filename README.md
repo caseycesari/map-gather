@@ -16,3 +16,10 @@ A command-line ruby script to scrape an ArcGIS Map Server REST API end-point and
 Example:
 
 `$ ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv`
+
+###TODO
+
+- Better error handling/checking
+- Add optional arguments to modify query parameters
+- Add optional arguments to adjust throttle time
+- Create tests
