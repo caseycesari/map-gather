@@ -1,8 +1,8 @@
 require 'rubygems'
-require 'rest_client'
 require 'json'
 require 'csv'
 require 'enumerator'
+require 'rest_client'
 
 # Check to make sure we have all the required arguments
 def startUpCheck()
