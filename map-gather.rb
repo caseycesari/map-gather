@@ -8,7 +8,7 @@ require 'rest_client'
 def startUpCheck()
   if ARGV.empty? || ARGV[0].nil? ||  ARGV[1].nil?
     abort("You must specify a URL and output file name: " + 
-      "ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/org/map/MapServer/0/query output.csv"
+      "ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv"
     )
   end
 
@@ -16,7 +16,7 @@ def startUpCheck()
   $outfile = ARGV[1]
 end
 
-# Get a list of all the ObjectIDS for the specified layer (i.e. $url)
+# Get a list of all the ObjectIDS for the specified layer (i.e. layer_index section of $url)
 def getOIDS
   params = {
     :where => 'OBJECTID IS NOT NULL',
