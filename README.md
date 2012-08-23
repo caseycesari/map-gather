@@ -16,7 +16,7 @@ to return just the ObjectIDs for all of the features in a layer has no limit.
 Therefore, to scrape all of the features for a given layer, *map-gather* first
 queries for the ObjectIDs of all of the features in the provided layer. 
 Then, in batches of 100, `WHERE OBJECTD ID IN (1, 2, 3..)` queries are
-made (delayed by ~1 second a past, as to not overwhelm the server) until 
+made (~2 seconds a part, as to not overwhelm the server) until 
 all of the features are retrieved. The results are written to a CSV file.
 
 ###Dependencies
