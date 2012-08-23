@@ -51,7 +51,7 @@ Example:
 
 Output:
 
-![output sample](http://raw.github.com/caseypt/map-gather/results.png "Output Sample")
+![output sample](http://www.github.com/caseypt/map-gather/master/results.png "Output Sample")
 
 ###TODO
 
