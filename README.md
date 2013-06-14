@@ -14,7 +14,7 @@ ArcGIS Server does not provide "bulk download" functionality, nor does the
 [REST API](http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/) allow you to 
 query for more than 1,000 features at a time (at least under the default
 server configuration). However, by default, there is no limit on the number 
-of results of a query that returns only the `ObjectIDs` for all of the 
+of results for a query that returns only the `ObjectIDs` for all of the 
 features in a layer. 
 Therefore, to scrape the tabular data of a feature layer, 
 *map-gather* first queries for the `ObjectIDs` of all of the 
@@ -31,11 +31,11 @@ The results are written locally to a CSV file.
 
 ###Usage
 
-`$ ruby map-gather.rb REST_API_URL OUTPUT_FILE_NAME`
+    $ ruby map-gather.rb REST_API_URL OUTPUT_FILE_NAME
 
 Or, more specifically:
 
-`$ ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv`
+    $ ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv
 
 Example:
 
@@ -51,7 +51,7 @@ Example:
 
 Output:
 
-![output sample](http://www.github.com/caseypt/map-gather/master/results.png "Output Sample")
+![output sample](https://github.com/caseypt/map-gather/blob/master/results.png "Output Sample")
 
 ###TODO
 
