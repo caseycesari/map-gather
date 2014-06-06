@@ -45,7 +45,7 @@ def parse_oids(response)
     oids.push(oid)
   end
 
-  return oids
+  oids
 end
 
 # Get each feature by its corresponding OID by doing a WHERE OBJECTID IN (1, 2, 3...)
