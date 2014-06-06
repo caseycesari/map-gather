@@ -31,15 +31,15 @@ The results are written locally to a CSV file.
 
 ###Usage
 
-    $ ruby map-gather.rb REST_API_URL OUTPUT_FILE_NAME
+    $ ruby map_gather.rb REST_API_URL OUTPUT_FILE_NAME
 
 Or, more specifically:
 
-    $ ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv
+    $ ruby map_gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv
 
 Example:
 
-    $ ruby map-gather.rb http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/6/query output.csv
+    $ ruby map_gather.rb http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/6/query output.csv
     Getting list of OBJECTIDs...
     Success!
     Creating output file...
