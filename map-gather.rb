@@ -9,7 +9,7 @@ require 'rest_client'
 # Check to make sure we have all the required arguments
 def startUpCheck()
   if ARGV.empty? || ARGV[0].nil? ||  ARGV[1].nil?
-    abort("You must specify a URL and output file name: " + 
+    abort("You must specify a URL and output file name: " +
       "ruby map-gather.rb http://www.example.com/ArcGIS/rest/services/folder_name/map_name/MapServer/layer_index/query output.csv"
     )
   end
@@ -38,7 +38,7 @@ def getOIDS
 end
 
 # Turn the JSON OID query response into an array of OIDS
-def parseOIDS(response) 
+def parseOIDS(response)
   oids = []
 
   JSON.parse(response.body)["objectIds"].each do |oid|
@@ -79,7 +79,7 @@ def getFeatures(oids)
 end
 
 # Parse and write the returned features to the output CSV file
-def parseFeatures(response) 
+def parseFeatures(response)
   JSON.parse(response.body)["features"].each do |feature|
     if $header == false
       $csv << feature["attributes"].keys
@@ -93,7 +93,7 @@ end
 # Show the user how far along the feature gathering/writing process is
 def updatePercentage(count, id)
   percent = (count.to_f() / $oids.length.to_f()) * 100
-  
+
   if percent == 100
     puts "Done!"
   else
@@ -107,7 +107,7 @@ startUpCheck()
 
 puts "Getting list of OBJECTIDs..."
 $oids = getOIDS()
-puts "Success!" 
+puts "Success!"
 
 puts "Creating output file..."
 $header = false
